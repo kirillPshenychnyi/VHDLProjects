@@ -24,7 +24,7 @@ begin
 			elsif( S = '0' and R = '1' ) then
 				q_temp <= '0';
 			elsif ( S = '1' and R = '0' ) then
-				q_temp <= '0';
+				q_temp <= '1';
 			else 
 				q_temp <= q_temp;  
 			end if;
