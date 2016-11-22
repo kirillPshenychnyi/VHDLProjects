@@ -1,7 +1,7 @@
 library IEEE;
 
 use IEEE.STD_LOGIC_1164.all; 
-use ieee.std_logic_unsigned.all;
+use ieee.std_logic_signed.all;
 
 entity operational_unit is port(	
 		clk : in STD_LOGIC; reset : in STD_LOGIC;
@@ -72,7 +72,7 @@ begin
 			end if;
 			
 			if y(13) = '1' then
-				A(15 downto 7) <= A(15 downto 7) + not B + 1;			
+				A(15 downto 7) <= A(15 downto 7) + not B(8 downto 0) + 1;			
 			elsif y(14) = '1' then
 				A(15 downto 7) <= A(15 downto 7) + B;
 			end if;
@@ -82,9 +82,9 @@ begin
 			end if;	   
 			
 			if y(16) = '1' then
-				C(7 downto 0) <= C(6 downto  0) & '1';
+				C(8 downto 0) <= C(7 downto  0) & '1';
 			elsif y(17) = '1' then
-				C(7 downto 0) <= C(6 downto  0) & '0';
+				C(8 downto 0) <= C(7 downto  0) & '0';
 			end if;
 		
 			if y(18) = '1' then
