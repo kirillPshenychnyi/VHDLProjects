@@ -16,8 +16,8 @@ architecture proc of proc is component control_unit
 		port(
 			clk : in std_logic; 
 			reset : in std_logic;
-			x : in std_logic_vector(0 to 9);
-			y : out STD_LOGIC_VECTOR(1 to 23)
+			x : in std_logic_vector(0 to 8);
+			y : out STD_LOGIC_VECTOR(1 to 24)
 			);
 	end component; 
 	
@@ -26,14 +26,14 @@ architecture proc of proc is component control_unit
 			reset : in std_logic;	
 			d1 : in std_logic_vector(15 downto 0); 
 			d2 : in std_logic_vector(7 downto 0); 
-			y  : in STD_LOGIC_VECTOR(1 to 23);
-			x  : out STD_LOGIC_VECTOR(0 to 9);			
+			y  : in STD_LOGIC_VECTOR(1 to 24);
+			x  : out STD_LOGIC_VECTOR(0 to 8);			
 			r : out std_logic_vector(15 downto 0)
 			); 
 	end component;
 	
-	signal y : std_logic_vector(1 to 23); 
-	signal x : std_logic_vector(0 to 9);
+	signal y : std_logic_vector(1 to 24); 
+	signal x : std_logic_vector(0 to 8);
 	signal nclk:std_logic;
 	
 begin
